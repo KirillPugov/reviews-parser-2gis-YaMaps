@@ -99,7 +99,7 @@ jobs:
           cleanup() { rm -f -- "$temporary_path"; }
           trap cleanup EXIT
 
-          php -r '
+          /usr/local/bin/php8.2 -r '
             $path = $argv[1];
             if (!is_file($path) || !is_readable($path) || filesize($path) < 1) { fwrite(STDERR, "Uploaded JSON is missing or empty\n"); exit(1); }
             try { $data = json_decode((string) file_get_contents($path), true, 512, JSON_THROW_ON_ERROR); }
