@@ -1,0 +1,27 @@
+{
+  "data": {
+    "reviews": [
+      {
+        "reviewId": "ya-standard",
+        "author": { "name": "Анна", "avatarUrl": "https://avatars.example.test/a/{size}" },
+        "text": "Отличная работа, спасибо!",
+        "rating": 5,
+        "updatedTime": "2025-01-10T12:00:00Z",
+        "photos": [
+          { "urlTemplate": "https://avatars.example.test/p/{size}" },
+          { "urlTemplate": "https://avatars.example.test/p/{size}" }
+        ],
+        "businessComment": { "text": "Спасибо за отзыв!", "updatedTime": "2025-01-11T12:00:00Z" }
+      },
+      {
+        "reviewId": "ya-missing",
+        "author": {},
+        "text": "Хорошо",
+        "rating": 9,
+        "createdTime": "2024-12-01T10:00:00Z",
+        "updatedTime": "2024-12-02T10:00:00Z"
+      },
+      { "reviewId": "ya-malformed", "author": { "name": "Без текста" }, "rating": 4 }
+    ]
+  }
+}

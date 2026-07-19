@@ -1,0 +1,25 @@
+{
+  "name": "standalone-reviews-parser",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run tests",
+    "test:watch": "vitest",
+    "reviews:sync": "tsx src/cli.ts",
+    "reviews:validate": "node scripts/validate-reviews-output.mjs data/reviews.json"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  }
+}

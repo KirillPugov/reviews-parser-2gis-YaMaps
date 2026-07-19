@@ -1,0 +1,130 @@
+name: Sync reviews to MODX
+
+on:
+  schedule:
+    - cron: "17 2 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production-reviews-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      YANDEX_BUSINESS_ID: ${{ secrets.YANDEX_BUSINESS_ID }}
+      YANDEX_BUSINESS_URL: ${{ secrets.YANDEX_BUSINESS_URL }}
+      TWOGIS_FIRM_ID: ${{ secrets.TWOGIS_FIRM_ID }}
+      TWOGIS_BUSINESS_URL: ${{ secrets.TWOGIS_BUSINESS_URL }}
+      TWOGIS_REVIEWS_KEY: ${{ secrets.TWOGIS_REVIEWS_KEY }}
+      REVIEWS_OUTPUT_PATH: ./data/reviews.json
+
+    steps:
+      - name: Check out parser
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build parser
+        run: npm run build
+
+      - name: Run parser
+        run: npm run reviews:sync
+
+      - name: Validate generated JSON
+        run: npm run reviews:validate
+
+      - name: Configure SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.BEGET_SSH_PRIVATE_KEY }}
+          SSH_KNOWN_HOSTS: ${{ secrets.BEGET_SSH_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+          test -n "$SSH_PRIVATE_KEY"
+          test -n "$SSH_KNOWN_HOSTS"
+          install -d -m 700 "$HOME/.ssh"
+          printf '%s\n' "$SSH_PRIVATE_KEY" > "$HOME/.ssh/id_ed25519"
+          chmod 600 "$HOME/.ssh/id_ed25519"
+          printf '%s\n' "$SSH_KNOWN_HOSTS" > "$HOME/.ssh/known_hosts"
+          chmod 600 "$HOME/.ssh/known_hosts"
+
+      - name: Upload, atomically replace and import
+        env:
+          BEGET_HOST: ${{ secrets.BEGET_HOST }}
+          BEGET_PORT: ${{ secrets.BEGET_PORT }}
+          BEGET_USER: ${{ secrets.BEGET_USER }}
+          BEGET_REVIEWS_PATH: ${{ secrets.BEGET_REVIEWS_PATH }}
+          BEGET_IMPORT_COMMAND: ${{ secrets.BEGET_IMPORT_COMMAND }}
+        run: |
+          set -euo pipefail
+          : "${BEGET_HOST:?BEGET_HOST is required}"
+          : "${BEGET_PORT:?BEGET_PORT is required}"
+          : "${BEGET_USER:?BEGET_USER is required}"
+          : "${BEGET_REVIEWS_PATH:?BEGET_REVIEWS_PATH is required}"
+          : "${BEGET_IMPORT_COMMAND:?BEGET_IMPORT_COMMAND is required}"
+
+          remote_temp="${BEGET_REVIEWS_PATH}.tmp.${GITHUB_RUN_ID}.${GITHUB_RUN_ATTEMPT}"
+          import_command_b64="$(printf '%s' "$BEGET_IMPORT_COMMAND" | base64 -w 0)"
+          ssh_target="${BEGET_USER}@${BEGET_HOST}"
+
+          ssh -p "$BEGET_PORT" "$ssh_target" bash -s -- "$remote_temp" "$BEGET_REVIEWS_PATH" <<'REMOTE_PREPARE'
+          set -euo pipefail
+          mkdir -p -- "$(dirname -- "$2")"
+          rm -f -- "$1"
+          REMOTE_PREPARE
+
+          scp -P "$BEGET_PORT" data/reviews.json "${ssh_target}:${remote_temp}"
+
+          ssh -p "$BEGET_PORT" "$ssh_target" bash -s -- \
+            "$remote_temp" "$BEGET_REVIEWS_PATH" "$import_command_b64" <<'REMOTE_DEPLOY'
+          set -euo pipefail
+          temporary_path="$1"
+          live_path="$2"
+          import_command="$(printf '%s' "$3" | base64 -d)"
+          backup_path="${live_path}.previous"
+          had_live=0
+
+          cleanup() { rm -f -- "$temporary_path"; }
+          trap cleanup EXIT
+
+          php -r '
+            $path = $argv[1];
+            if (!is_file($path) || !is_readable($path) || filesize($path) < 1) { fwrite(STDERR, "Uploaded JSON is missing or empty\n"); exit(1); }
+            try { $data = json_decode((string) file_get_contents($path), true, 512, JSON_THROW_ON_ERROR); }
+            catch (Throwable $e) { fwrite(STDERR, "Uploaded JSON is malformed\n"); exit(1); }
+            if (!is_array($data) || ($data["schemaVersion"] ?? null) !== 1 || !isset($data["reviews"]) || !is_array($data["reviews"]) || count($data["reviews"]) === 0) { fwrite(STDERR, "Uploaded JSON contract is invalid or empty\n"); exit(1); }
+            foreach (["yandex", "2gis"] as $source) { if (!isset($data["sources"][$source]) || !in_array($data["sources"][$source]["status"] ?? null, ["ok", "stale", "failed"], true)) { fwrite(STDERR, "Uploaded source metadata is invalid\n"); exit(1); } }
+            if (($data["sources"]["yandex"]["status"] ?? null) === "failed" && ($data["sources"]["2gis"]["status"] ?? null) === "failed") { fwrite(STDERR, "Both sources failed\n"); exit(1); }
+          ' "$temporary_path"
+
+          if [ -f "$live_path" ]; then
+            cp -p -- "$live_path" "$backup_path"
+            had_live=1
+          fi
+          mv -f -- "$temporary_path" "$live_path"
+
+          if ! bash -lc "$import_command"; then
+            if [ "$had_live" -eq 1 ]; then
+              mv -f -- "$backup_path" "$live_path"
+            else
+              rm -f -- "$live_path"
+            fi
+            echo "MODX import failed; previous reviews.json was restored" >&2
+            exit 1
+          fi
+
+          rm -f -- "$backup_path"
+          trap - EXIT
+          REMOTE_DEPLOY

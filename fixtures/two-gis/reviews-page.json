@@ -1,0 +1,29 @@
+{
+  "meta": { "total_count": 3, "next_link": null },
+  "reviews": [
+    {
+      "id": "dg-standard",
+      "user": {
+        "name": "Борис",
+        "photo_preview_urls": { "320x": "https://photo.example.test/avatar.jpg" }
+      },
+      "text": "Всё сделали в срок.",
+      "rating": 5,
+      "date_created": "2025-02-01T12:00:00+05:00",
+      "date_edited": "2025-02-02T12:00:00+05:00",
+      "media": [
+        { "preview_urls": { "url": "https://photo.example.test/review.jpg" } },
+        { "preview_urls": { "url": "https://photo.example.test/review.jpg" } }
+      ],
+      "official_answer": { "text": "Благодарим!", "date_created": "2025-02-03T12:00:00+05:00" }
+    },
+    {
+      "id": "dg-missing",
+      "user": {},
+      "text": "Нормально",
+      "rating": 0,
+      "date_created": "2024-10-01T12:00:00Z"
+    },
+    { "id": "dg-malformed", "user": { "name": "Без текста" }, "rating": 4 }
+  ]
+}

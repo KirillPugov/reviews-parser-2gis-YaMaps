@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+data/raw/*.json
+data/backups/*.json
+data/reviews.json.tmp
+*.log

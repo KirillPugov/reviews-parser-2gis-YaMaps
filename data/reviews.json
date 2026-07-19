@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-15T23:47:21.737Z",
+  "sources": {
+    "yandex": {
+      "status": "ok",
+      "fetchedAt": "2026-07-15T23:47:18.969Z",
+      "count": 12,
+      "error": null
+    },
+    "2gis": {
+      "status": "ok",
+      "fetchedAt": "2026-07-15T23:47:19.007Z",
+      "count": 1,
+      "error": null
+    }
+  },
+  "reviews": [
+    {
+      "id": "2gis:211188776",
+      "externalId": "211188776",
+      "source": "2gis",
+      "authorName": "Игорь💚 Калашников🐈🔵♠️",
+      "authorAvatarUrl": "https://i2.photo.2gis.com/images/profile/30258560307806557_19e1_320x.jpg",
+      "rating": 5,
+      "text": "😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭🥺🥺🥺🥺🥺🥺🥺🥺🥺🥺🥺🥺🥺🥺",
+      "createdAt": "2026-01-09T17:54:48.564Z",
+      "updatedAt": "2026-01-09T17:55:17.590Z",
+      "reviewUrl": null,
+      "photos": [],
+      "reply": null,
+      "scrapedAt": "2026-07-15T23:47:19.007Z"
+    },
+    {
+      "id": "yandex:xN-DNFL4CG0c7-SAg65b-zekO1wu8lP",
+      "externalId": "xN-DNFL4CG0c7-SAg65b-zekO1wu8lP",
+      "source": "yandex",
+      "authorName": "Стоблова Анастасия",
+      "authorAvatarUrl": "https://avatars.mds.yandex.net/get-yapic/54535/3ZV6BzPRHxBJunCakv70KrY0LrY-1/islands-200",
+      "rating": 5,
+      "text": "Заказала вывеску, постеры, режимник, доску информации для салона красоты. Сделали в срок, все качественно. Рекомендую.",
+      "createdAt": "2024-11-28T07:37:27.181Z",
+      "updatedAt": null,
+      "reviewUrl": null,
+      "photos": [
+        "https://avatars.mds.yandex.net/get-altay/13609869/2a0000019371b42c7492879d19cc9e780c1a/XXXL",
+        "https://avatars.mds.yandex.net/get-altay/14014133/2a0000019371b41c7f88bc200ded4f9a4294/XXXL",
+        "https://avatars.mds.yandex.net/get-altay/14031726/2a0000019371b461f669235eee39670a72b7/XXXL",
+        "https://avatars.mds.yandex.net/get-altay/14090612/2a0000019371b43c1000828320888dcfa67d/XXXL",
+        "https://avatars.mds.yandex.net/get-altay/14451083/2a0000019371b44e4d40d1915317a9f665e1/XXXL"
+      ],
+      "reply": {
+        "text": "Благодарим за ваш отзыв, Успехов в бизнесе!",
+        "createdAt": "2024-12-02T17:04:34.996Z"
+      },
+      "scrapedAt": "2026-07-15T23:47:18.969Z"
+    },
+    {
+      "id": "yandex:hxcOAGoTIbu1OEuAN-smBPtnk-1_zh1",
+      "externalId": "hxcOAGoTIbu1OEuAN-smBPtnk-1_zh1",
+      "source": "yandex",
+      "authorName": "Elena Снежная",
+      "authorAvatarUrl": "https://avatars.mds.yandex.net/get-yapic/27274/kLkBehVQVFEuo5qgJDLNG4ztc-1/islands-200",
+      "rating": 5,
+      "text": "Прекрасный коллектив, все четко и быстро. Для открытия салона сделали все необходимое: Вывеску (дизайн и изготовление) режимку, уголок потребителя, подсветку, неоновые таблички, лайтбоксы, все под ключ. Заказала, согласовали и уже все на месте. Благодарю за оперативность и внимательность к моим пожеланиям)))) удачи и процветания!!!",
+      "createdAt": "2024-11-28T06:21:27.196Z",
+      "updatedAt": null,
+      "reviewUrl": null,
+      "photos": [],
+      "reply": null,
+      "scrapedAt": "2026-07-15T23:47:18.969Z"
+    },
+    {
+      "id": "yandex:PBDpOYWh-qnWC2vHGyiWY8RlqWKoDUk8q",
+      "externalId": "PBDpOYWh-qnWC2vHGyiWY8RlqWKoDUk8q",
+      "source": "yandex",
+      "authorName": "Gaius Marius",
+      "authorAvatarUrl": "https://avatars.mds.yandex.net/get-yapic/40841/ba53ht1VbfSwNdTI61KYqS0Es-1/islands-200",
+      "rating": 5,
+      "text": "Заказывал лазерную резку цифр из пластика, предложили различные  варианты, сделали оперативно, за что спасибо.",
+      "createdAt": "2024-11-27T06:21:22.826Z",
+      "updatedAt": null,
+      "reviewUrl": null,
+      "photos": [],
+      "reply": null,
+      "scrapedAt": "2026-07-15T23:47:18.969Z"
+    },
+    {
+      "id": "yandex:29y0jbOI25jzM2Ec0kq2F9ScSIS5Mk",
+      "externalId": "29y0jbOI25jzM2Ec0kq2F9ScSIS5Mk",
+      "source": "yandex",
+      "authorName": "Натан Ш.",
+      "authorAvatarUrl": "https://avatars.mds.yandex.net/get-yapic/37154/0t-2/islands-200",
+      "rating": 1,
+      "text": "Позвонил в компанию с простым вопросом - можно ли распечатать чертеж на а1 формате из pdf - \"А вы у нас печатали? Нет? Воот, а у нас сегодня выходной (на яндекс картах указано что сегодня выходного нет), если бы печатали, то знали, я вам скину номер сотруднику - он вам напишет\". \nВопрос - какое отношение имеет то, печатал я у вас или нет к тому что у вас выходной, который не указан на яндекс картах и зачем столько воды? Ок, иду по цепочке дальше - человек мне пишет :\n- \" что вам надо?\"\n - \"чертеж на а1 из пдф\".  \n- \"На принтере у нас печать максимальная A3, но возможно на других станках под размер можно сделать\". Кидает номер ещё какого то менежера. Ок, иду по цепочке дальше.\nМенеджер:\n- \"А что вам надо и сколько?\"\n- \"Чертеж на а1 из пдф\" Кидаю чертеж. \n\nВсё, молчок.\n\nНеужели Ваш клиент должен пройти такой путь и по итогу не получить ответ на такой простой вопрос, на который должен знать ответ каждый сотрудник в компании \"печатаете ли вы на а1 ?\"",
+      "createdAt": "2024-11-17T12:33:27.479Z",
+      "updatedAt": null,
+      "reviewUrl": null,
+      "photos": [],
+      "reply": null,
+      "scrapedAt": "2026-07-15T23:47:18.969Z"
+    },
+    {
+      "id": "yandex:3YsYQRFiMcAPnIcM7ssImS-yXu9QxJ1",
+      "externalId": "3YsYQRFiMcAPnIcM7ssImS-yXu9QxJ1",
+      "source": "yandex",
+      "authorName": "Анна Гринева",
+      "authorAvatarUrl": "https://avatars.mds.yandex.net/get-yapic/62162/0k-7/islands-200",
+      "rating": 5,
+      "text": "Просто супер. Заказывали вывеску, сделали очень быстро.",
+      "createdAt": "2023-10-12T20:30:48.713Z",
+      "updatedAt": null,
+      "reviewUrl": null,
+      "photos": [],
+      "reply": {
+        "text": "Благодарим за отзывы, Анна! Стараемся исполнять работу быстро и качественно, чтобы каждый наш заказчик остался максимально доволен! Спектр наших услуг достаточно широк, чтобы предложить вам множество интересных решений!",
+        "createdAt": "2023-11-19T16:38:34.187Z"
+      },
+      "scrapedAt": "2026-07-15T23:47:18.969Z"
+    },
+    {
+      "id": "yandex:QHpxdnnlAMLE8OGcg6arfd7IwL7jeki",
+      "externalId": "QHpxdnnlAMLE8OGcg6arfd7IwL7jeki",
+      "source": "yandex",
+      "authorName": "Алексей",
+      "authorAvatarUrl": "https://avatars.mds.yandex.net/get-yapic/27503/ECg7fRewpBJ36yhSg73vk6hBk-1/islands-200",
+      "rating": 5,
+      "text": "Хороший коллектив, современные станки высокой точности! Возможностями не ограничены. Рекомендую!!!",
+      "createdAt": "2023-06-20T15:09:45.727Z",
+      "updatedAt": null,
+      "reviewUrl": null,
+      "photos": [],
+      "reply": {
+        "text": "Благодарим за отзыв! У нас дружный коллектив мастеров разных направлений, а работаем мы на современном оборудовании, чтобы выполнять работу максимально качественно! Обращайтесь снова!😎👍🏻",
+        "createdAt": "2023-11-19T16:29:04.961Z"
+      },
+      "scrapedAt": "2026-07-15T23:47:18.969Z"
+    },
+    {
+      "id": "yandex:gKjG4Fdc0RdYJ_GzAzusFGVtW16pa9bh9",
+      "externalId": "gKjG4Fdc0RdYJ_GzAzusFGVtW16pa9bh9",
+      "source": "yandex",
+      "authorName": "Natalia Gerasimova",
+      "authorAvatarUrl": "https://avatars.mds.yandex.net/get-yapic/45848/KJ1t1c6S4SS2DnR6gvPwdb9RbGk-1/islands-200",
+      "rating": 1,
+      "text": "Без слов.",
+      "createdAt": "2022-05-28T09:17:51.243Z",
+      "updatedAt": null,
+      "reviewUrl": null,
+      "photos": [],
+      "reply": null,
+      "scrapedAt": "2026-07-15T23:47:18.969Z"
+    },
+    {
+      "id": "yandex:QPDC348lDbD-LMK0ajeJPRbQlVfcQ5t",
+      "externalId": "QPDC348lDbD-LMK0ajeJPRbQlVfcQ5t",
+      "source": "yandex",
+      "authorName": "Оксана",
+      "authorAvatarUrl": null,
+      "rating": 5,
+      "text": "Отличные ребята,все очень качественно, в срок.",
+      "createdAt": "2021-12-20T09:41:54.582Z",
+      "updatedAt": null,
+      "reviewUrl": null,
+      "photos": [],
+      "reply": {
+        "text": "Спасибо за приятный отзыв",
+        "createdAt": "2022-02-14T18:19:56.411Z"
+      },
+      "scrapedAt": "2026-07-15T23:47:18.969Z"
+    },
+    {
+      "id": "yandex:aQSQZfOT9-B5CHeq9yex0b_clzZfZJn",
+      "externalId": "aQSQZfOT9-B5CHeq9yex0b_clzZfZJn",
+      "source": "yandex",
+      "authorName": "Пользователь",
+      "authorAvatarUrl": null,
+      "rating": 5,
+      "text": "Единственная компания, которая отозвалась на просьбу оформить в супер-мега-срочном режиме наш салон. Пообещали-Сделали! Внимательный менеджер подсказал идею вывески с учётом наших нюансов. Я осталась очень довольна результатом. Рекомендую.",
+      "createdAt": "2020-07-03T23:00:50.314Z",
+      "updatedAt": null,
+      "reviewUrl": null,
+      "photos": [],
+      "reply": {
+        "text": "Благодарим за отзыв, Анна! Работаем добросовестно и качественно, учитывая все ваши идеи и пожелания! Обращайтесь к нам снова, мы выполняем комплексную работу, ведь у нас большое разнообразие услуг!",
+        "createdAt": "2023-11-19T16:25:48.245Z"
+      },
+      "scrapedAt": "2026-07-15T23:47:18.969Z"
+    },
+    {
+      "id": "yandex:NEB2LVxztUAadCpMsJyocAyttrudQ_",
+      "externalId": "NEB2LVxztUAadCpMsJyocAyttrudQ_",
+      "source": "yandex",
+      "authorName": "Пользователь",
+      "authorAvatarUrl": null,
+      "rating": 5,
+      "text": "Оказалось не просто найти ребят, которые могут изготовить сложную объёмную световую конструкцию и нашел их тут. Работают качественно! Только систему скидок хотелось бы внедрить :)",
+      "createdAt": "2020-06-30T15:55:59.248Z",
+      "updatedAt": null,
+      "reviewUrl": null,
+      "photos": [],
+      "reply": {
+        "text": "Благодарим за отзыв! Спасибо за конструктивную обратную связь, которая нам крайне необходима, чтобы становиться лучше! Мы предоставляем широкий спектр услуг, который со временем только увеличивается!",
+        "createdAt": "2023-11-19T16:20:34.885Z"
+      },
+      "scrapedAt": "2026-07-15T23:47:18.969Z"
+    },
+    {
+      "id": "yandex:-5FL-T449Fn-H-mEAjhDI41ZibDEFnMk",
+      "externalId": "-5FL-T449Fn-H-mEAjhDI41ZibDEFnMk",
+      "source": "yandex",
+      "authorName": "Александр Р.",
+      "authorAvatarUrl": null,
+      "rating": 5,
+      "text": "Отличная компания, помогут реализовать любую идею.",
+      "createdAt": "2020-02-20T09:00:53.784Z",
+      "updatedAt": null,
+      "reviewUrl": null,
+      "photos": [],
+      "reply": {
+        "text": "Благодарим за отзыв. Александр! У нас много квалифицированных сотрудников, которые смогут грамотно вас сориентировать и подсказать по любым вопросам касаемо наших услуг! Поможем не только в реализации, но так же дадим советы и создадим проект конкретно под ваш запрос!",
+        "createdAt": "2023-11-19T16:18:50.153Z"
+      },
+      "scrapedAt": "2026-07-15T23:47:18.969Z"
+    },
+    {
+      "id": "yandex:KQHkQIPs-VupaNoKxqXADRbtfYbVoT",
+      "externalId": "KQHkQIPs-VupaNoKxqXADRbtfYbVoT",
+      "source": "yandex",
+      "authorName": "Екатерина Кириенко",
+      "authorAvatarUrl": "https://avatars.mds.yandex.net/get-yapic/69015/nOdLguBshpeWhp5lZdM8sbDI-1/islands-200",
+      "rating": 5,
+      "text": "Отлично! Качественное исполнение в минимальные сроки!",
+      "createdAt": "2019-10-15T18:44:45.126Z",
+      "updatedAt": null,
+      "reviewUrl": null,
+      "photos": [],
+      "reply": {
+        "text": "Благодарим за отзыв, Екатерина! Наши мастера стараются изо дня в день, чтобы каждый наш клиент остался максимально доволен! \nОбращаясь к нам, вы всегда можете расчитывать на качественную работу и быстрое исполнение!😎👍🏻",
+        "createdAt": "2023-11-19T16:15:23.034Z"
+      },
+      "scrapedAt": "2026-07-15T23:47:18.969Z"
+    }
+  ]
+}
