@@ -9,8 +9,8 @@ permissions:
   contents: read
 
 concurrency:
-  group: production-reviews-sync
-  cancel-in-progress: false
+  group: production-reviews-sync-v2
+  cancel-in-progress: true
 
 jobs:
   sync:
